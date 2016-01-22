@@ -4,6 +4,71 @@
   "packageName" : "com.testvcs1.mytestdatabase",
   "draft" : false,
   "tables" : [ {
+    "name" : "TABLE2",
+    "oldName" : "TABLE2",
+    "entityName" : "Table2",
+    "type" : "TABLE",
+    "schema" : "MyTestDatabase",
+    "catalog" : "MyTestDatabase",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "integer",
+      "hibernateType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "identity",
+      "sequenceName" : null,
+      "foreignKey" : false,
+      "unique" : true,
+      "partOfAnyRelation" : true,
+      "partOfPrimaryKey" : true,
+      "primaryKey" : true
+    }, {
+      "name" : "COLUMN2",
+      "oldName" : "COLUMN2",
+      "fieldName" : "column2",
+      "sqlType" : "integer",
+      "hibernateType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null,
+      "foreignKey" : false,
+      "unique" : false,
+      "partOfAnyRelation" : false,
+      "partOfPrimaryKey" : false,
+      "primaryKey" : false
+    } ],
+    "primaryKey" : {
+      "name" : "PRIMARY",
+      "virtual" : false,
+      "columns" : [ "ID" ],
+      "composite" : false
+    },
+    "relations" : [ {
+      "name" : "FK_k7l70gsfx2cqg7titmljfc831",
+      "fieldName" : "table1",
+      "cardinality" : "OneToOne",
+      "sourceTable" : "TABLE2",
+      "targetTable" : "TABLE1",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : false,
+      "virtual" : false,
+      "selfRelation" : false,
+      "composite" : false
+    } ],
+    "constraints" : [ ],
+    "fullyQualifiedName" : "com.testvcs1.mytestdatabase.Table2"
+  }, {
     "name" : "TABLE1",
     "oldName" : "TABLE1",
     "entityName" : "Table1",
@@ -19,12 +84,12 @@
       "length" : 255,
       "precision" : 19,
       "nullable" : false,
-      "defaultValue" : "",
-      "generator" : "identity",
+      "defaultValue" : null,
+      "generator" : "assigned",
       "sequenceName" : null,
+      "foreignKey" : true,
       "unique" : true,
-      "foreignKey" : false,
-      "partOfAnyRelation" : false,
+      "partOfAnyRelation" : true,
       "partOfPrimaryKey" : true,
       "primaryKey" : true
     }, {
@@ -39,8 +104,42 @@
       "defaultValue" : null,
       "generator" : "assigned",
       "sequenceName" : null,
-      "unique" : false,
       "foreignKey" : false,
+      "unique" : false,
+      "partOfAnyRelation" : false,
+      "partOfPrimaryKey" : false,
+      "primaryKey" : false
+    }, {
+      "name" : "COLUMN3",
+      "oldName" : "COLUMN3",
+      "fieldName" : "column3",
+      "sqlType" : "date",
+      "hibernateType" : "date",
+      "length" : 10,
+      "precision" : 19,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null,
+      "foreignKey" : false,
+      "unique" : false,
+      "partOfAnyRelation" : false,
+      "partOfPrimaryKey" : false,
+      "primaryKey" : false
+    }, {
+      "name" : "COLUMN4",
+      "oldName" : "COLUMN4",
+      "fieldName" : "column4",
+      "sqlType" : "string",
+      "hibernateType" : "string",
+      "length" : 255,
+      "precision" : 19,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null,
+      "foreignKey" : false,
+      "unique" : false,
       "partOfAnyRelation" : false,
       "partOfPrimaryKey" : false,
       "primaryKey" : false
@@ -51,7 +150,21 @@
       "columns" : [ "ID" ],
       "composite" : false
     },
-    "relations" : [ ],
+    "relations" : [ {
+      "name" : "FK_k7l70gsfx2cqg7titmljfc831",
+      "fieldName" : "table2",
+      "cardinality" : "OneToOne",
+      "sourceTable" : "TABLE1",
+      "targetTable" : "TABLE2",
+      "mappings" : [ {
+        "sourceColumn" : "ID",
+        "targetColumn" : "ID"
+      } ],
+      "primary" : true,
+      "virtual" : false,
+      "selfRelation" : false,
+      "composite" : false
+    } ],
     "constraints" : [ ],
     "fullyQualifiedName" : "com.testvcs1.mytestdatabase.Table1"
   } ]

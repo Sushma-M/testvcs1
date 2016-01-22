@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.testvcs1.mytestdatabase">
-  <class table="`TABLE1`" name="com.testvcs1.mytestdatabase.Table1" entity-name="com.testvcs1.mytestdatabase.Table1" schema="MyTestDatabase">
+  <class table="`TABLE2`" name="com.testvcs1.mytestdatabase.Table2" entity-name="com.testvcs1.mytestdatabase.Table2" schema="MyTestDatabase">
     <id name="id" type="integer">
       <column name="`ID`" length="255" not-null="true" precision="19"/>
       <generator class="identity"/>
     </id>
+    <property name="column2" type="integer">
+      <column name="`COLUMN2`" length="255" not-null="false" precision="19"/>
+    </property>
+    <one-to-one name="table1" class="com.testvcs1.mytestdatabase.Table1">
+      <meta attribute="mapping-ID">
+        ID
+      </meta>
+    </one-to-one>
+  </class>
+  <class table="`TABLE1`" name="com.testvcs1.mytestdatabase.Table1" entity-name="com.testvcs1.mytestdatabase.Table1" schema="MyTestDatabase">
+    <id name="id" type="integer">
+      <column name="`ID`" length="255" not-null="true" precision="19"/>
+      <generator class="foreign">
+        <param name="property">table2</param>
+      </generator>
+    </id>
     <property name="column2" type="string">
       <column name="`COLUMN2`" length="255" not-null="false" precision="19"/>
     </property>
+    <property name="column3" type="date">
+      <column name="`COLUMN3`" length="10" not-null="false" precision="19"/>
+    </property>
+    <property name="column4" type="string">
+      <column name="`COLUMN4`" length="255" not-null="false" precision="19"/>
+    </property>
+    <one-to-one
+      name="table2"
+      class="com.testvcs1.mytestdatabase.Table2"
+      constrained="true">
+      <meta attribute="mapping-ID">
+        ID
+      </meta>
+    </one-to-one>
   </class>
 </hibernate-mapping>

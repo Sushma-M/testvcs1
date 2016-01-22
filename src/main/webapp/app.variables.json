@@ -68,6 +68,32 @@
     "dbSystem" : "MySQL",
     "package" : "com.testvcs1.mytestdatabase.Table1"
   },
+  "MyTestDatabaseTable2Data" : {
+    "_id" : "wm-MyTestDatabaseTable2Data-wm.LiveVariable-1453453963829",
+    "name" : "MyTestDatabaseTable2Data",
+    "owner" : "App",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "Table2",
+    "isList" : true,
+    "saveInPhonegap" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "liveSource" : "MyTestDatabase",
+    "ignoreCase" : false,
+    "matchMode" : "start",
+    "isDefault" : true,
+    "dbSystem" : "MySQL"
+  },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",
     "name" : "supportedLocale",
