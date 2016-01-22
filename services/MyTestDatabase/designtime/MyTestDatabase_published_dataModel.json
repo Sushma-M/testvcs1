@@ -1,0 +1,58 @@
+{
+  "name" : "MyTestDatabase",
+  "description" : "MyTestDatabase",
+  "packageName" : "com.testvcs1.mytestdatabase",
+  "draft" : false,
+  "tables" : [ {
+    "name" : "TABLE1",
+    "oldName" : "TABLE1",
+    "entityName" : "Table1",
+    "type" : "TABLE",
+    "schema" : "MyTestDatabase",
+    "catalog" : "MyTestDatabase",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "integer",
+      "hibernateType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "nullable" : false,
+      "defaultValue" : "",
+      "generator" : "identity",
+      "sequenceName" : null,
+      "unique" : true,
+      "foreignKey" : false,
+      "partOfAnyRelation" : false,
+      "partOfPrimaryKey" : true,
+      "primaryKey" : true
+    }, {
+      "name" : "COLUMN2",
+      "oldName" : "COLUMN2",
+      "fieldName" : "column2",
+      "sqlType" : "string",
+      "hibernateType" : "string",
+      "length" : 255,
+      "precision" : 19,
+      "nullable" : true,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null,
+      "unique" : false,
+      "foreignKey" : false,
+      "partOfAnyRelation" : false,
+      "partOfPrimaryKey" : false,
+      "primaryKey" : false
+    } ],
+    "primaryKey" : {
+      "name" : "PRIMARY",
+      "virtual" : false,
+      "columns" : [ "ID" ],
+      "composite" : false
+    },
+    "relations" : [ ],
+    "constraints" : [ ],
+    "fullyQualifiedName" : "com.testvcs1.mytestdatabase.Table1"
+  } ]
+}

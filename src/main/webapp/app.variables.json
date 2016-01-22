@@ -7,6 +7,67 @@
     "operation" : "gotoPage",
     "pageName" : "Main"
   },
+  "MyTestDatabaseTable1Data" : {
+    "_id" : "wm-MyTestDatabaseTable1Data-wm.LiveVariable-1453451536020",
+    "name" : "MyTestDatabaseTable1Data",
+    "owner" : "App",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "Table1",
+    "isList" : true,
+    "saveInPhonegap" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "liveSource" : "MyTestDatabase",
+    "ignoreCase" : false,
+    "matchMode" : "start",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "id",
+        "type" : "integer",
+        "hibernateType" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : ""
+      }, {
+        "fieldName" : "column2",
+        "type" : "string",
+        "hibernateType" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "COLUMN2",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false
+      } ],
+      "entityName" : "Table1",
+      "fullyQualifiedName" : "com.testvcs1.mytestdatabase.Table1",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "id" ]
+    },
+    "isDefault" : true,
+    "tableName" : "TABLE1",
+    "tableType" : "TABLE",
+    "dbSystem" : "MySQL",
+    "package" : "com.testvcs1.mytestdatabase.Table1"
+  },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",
     "name" : "supportedLocale",
