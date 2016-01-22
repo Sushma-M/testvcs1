@@ -6,18 +6,14 @@ package com.testvcs1.mytestdatabase;
 
 
 import javax.persistence.PrimaryKeyJoinColumn;
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
 
 
 import java.util.Arrays;
@@ -40,15 +36,13 @@ public class Table1  implements java.io.Serializable {
 
     private Integer id;
     private String column2;
-    private Date column3;
-    private String column4;
     private Table2 table2;
 
     public Table1() {
     }
 
 
-    @GenericGenerator(name="generator", strategy="foreign", parameters=@Parameter(name="property", value="table2"))@Id @GeneratedValue(generator="generator")
+    @Id @GeneratedValue(strategy=IDENTITY)
     
 
     @Column(name="`ID`", nullable=false)
@@ -71,29 +65,7 @@ public class Table1  implements java.io.Serializable {
         this.column2 = column2;
     }
 
-    @Temporal(TemporalType.DATE)
-
-    @Column(name="`COLUMN3`", length=10)
-    public Date getColumn3() {
-        return this.column3;
-    }
-    
-    public void setColumn3(Date column3) {
-        this.column3 = column3;
-    }
-
-    
-
-    @Column(name="`COLUMN4`")
-    public String getColumn4() {
-        return this.column4;
-    }
-    
-    public void setColumn4(String column4) {
-        this.column4 = column4;
-    }
-
-    @OneToOne(fetch=FetchType.EAGER) @PrimaryKeyJoinColumn
+    @Transient @OneToOne(fetch=FetchType.EAGER, mappedBy="table1")
     public Table2 getTable2() {
         return this.table2;
     }

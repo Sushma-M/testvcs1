@@ -10,10 +10,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 
 import java.util.Arrays;
@@ -35,14 +36,13 @@ import javax.persistence.UniqueConstraint;
 public class Table2  implements java.io.Serializable {
 
     private Integer id;
-    private Integer column2;
     private Table1 table1;
 
     public Table2() {
     }
 
 
-    @Id @GeneratedValue(strategy=IDENTITY)
+    @GenericGenerator(name="generator", strategy="foreign", parameters=@Parameter(name="property", value="table1"))@Id @GeneratedValue(generator="generator")
     
 
     @Column(name="`ID`", nullable=false)
@@ -54,18 +54,7 @@ public class Table2  implements java.io.Serializable {
         this.id = id;
     }
 
-    
-
-    @Column(name="`COLUMN2`")
-    public Integer getColumn2() {
-        return this.column2;
-    }
-    
-    public void setColumn2(Integer column2) {
-        this.column2 = column2;
-    }
-
-    @Transient @OneToOne(fetch=FetchType.EAGER, mappedBy="table2")
+    @OneToOne(fetch=FetchType.EAGER) @PrimaryKeyJoinColumn
     public Table1 getTable1() {
         return this.table1;
     }

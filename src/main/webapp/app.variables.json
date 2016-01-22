@@ -69,7 +69,7 @@
     "package" : "com.testvcs1.mytestdatabase.Table1"
   },
   "MyTestDatabaseTable2Data" : {
-    "_id" : "wm-MyTestDatabaseTable2Data-wm.LiveVariable-1453453963829",
+    "_id" : "wm-MyTestDatabaseTable2Data-wm.LiveVariable-1453453825561",
     "name" : "MyTestDatabaseTable2Data",
     "owner" : "App",
     "category" : "wm.LiveVariable",
@@ -91,8 +91,69 @@
     "liveSource" : "MyTestDatabase",
     "ignoreCase" : false,
     "matchMode" : "start",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "table1",
+        "type" : "integer",
+        "hibernateType" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "generator" : "assigned",
+        "isRelated" : true,
+        "defaultValue" : "",
+        "relatedTableName" : "TABLE1",
+        "relatedEntityName" : "Table1",
+        "relatedFieldName" : "table1.id",
+        "isList" : false,
+        "targetTable" : "TABLE1",
+        "columns" : [ {
+          "fieldName" : "id",
+          "type" : "integer",
+          "hibernateType" : "integer",
+          "fullyQualifiedType" : "integer",
+          "columnName" : "ID",
+          "isPrimaryKey" : true,
+          "notNull" : true,
+          "length" : 255,
+          "precision" : 19,
+          "generator" : "identity",
+          "isRelated" : false,
+          "defaultValue" : ""
+        }, {
+          "fieldName" : "column2",
+          "type" : "string",
+          "hibernateType" : "string",
+          "fullyQualifiedType" : "string",
+          "columnName" : "COLUMN2",
+          "isPrimaryKey" : false,
+          "notNull" : false,
+          "length" : 255,
+          "precision" : 19,
+          "generator" : "assigned",
+          "isRelated" : false
+        } ]
+      } ],
+      "entityName" : "Table2",
+      "fullyQualifiedName" : "com.testvcs1.mytestdatabase.Table2",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "id" ]
+    },
     "isDefault" : true,
-    "dbSystem" : "MySQL"
+    "tableName" : "TABLE2",
+    "tableType" : "TABLE",
+    "dbSystem" : "MySQL",
+    "properties" : [ "table1" ],
+    "relatedTables" : [ {
+      "columnName" : "table1",
+      "relationName" : "table1",
+      "type" : "Table1",
+      "watchOn" : "MyTestDatabaseTable1Data",
+      "package" : "com.testvcs1.mytestdatabase.Table2"
+    } ],
+    "package" : "com.testvcs1.mytestdatabase.Table2"
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",
